@@ -3,31 +3,109 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: var(--font-roboto);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  p {
+    @apply leading-[2] tracking-[0.08em];
   }
+
+  input,
+  textarea {
+    @apply outline-none;
+  }
+
+  img {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+  }
+}
+
+@layer components {
+  .content {
+    @apply max-w-[1140px] mx-auto;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .full-absolute {
+    @apply w-full h-full absolute top-0 left-0;
+  }
+
+  .full-fixed {
+    @apply w-full h-full fixed top-0 left-0;
+  }
+
+  .unselectable {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .undraggable {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+  }
+}
+
+*:has(> .content) {
+  @apply sm:px-4 md:px-12 lg:px-24 xl:px-36;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px rgb(105 56 217/0.25) inset;
+  box-shadow: 0 0 0 30px rgb(105 56 217/0.25) inset;
+  @apply border-primary font-bold;
+}
+
+::selection {
+  @apply bg-black/80 text-white;
+}
+
+.colorize-white {
+  display: inline-block;
+  background-color: white;
+  -webkit-mask-size: 95%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+@keyframes Spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: Spinner 1s linear infinite;
 }
