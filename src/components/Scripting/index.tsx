@@ -247,14 +247,7 @@ export function ScriptingWhite({
   alt: __,
   ...props
 }: { type: ScriptingType } & Partial<ImageProps>) {
-  const { src } = icons[type];
-
-  console.log({
-    mask: src,
-    width,
-    height,
-  });
-
+  const { src } = icons[type] as any;
   return (
     <div
       style={{

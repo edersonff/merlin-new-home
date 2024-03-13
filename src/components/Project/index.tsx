@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import Scripting, { ScriptingType } from "../Scripting";
-import { Project } from "./projects";
+import { Project as ProjectType } from "./projects";
 import Link from "next/link";
 import { TbWindowMaximize } from "react-icons/tb";
 import Image from "next/image";
@@ -12,7 +12,7 @@ export default function Project({
   color,
   scripts,
   url,
-}: Project) {
+}: ProjectType) {
   const titleHtml = useMemo(() => {
     return title.replace(/<color>(.*?)<\/color>/g, (_, text) => {
       return `<span style="color: ${color}; font-weight: bold">${text}</span>`;

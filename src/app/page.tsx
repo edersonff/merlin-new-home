@@ -15,7 +15,10 @@ import Service from "@/components/Service";
 import Testemotional from "@/components/Testemotional";
 import Forms from "@/sections/forms";
 
-export const about = [
+const about: {
+  title: string;
+  description: string;
+}[] = [
   {
     title: "Missão",
     description:
@@ -33,7 +36,7 @@ export const about = [
   },
 ];
 
-export const testemonials = [
+const testemonials = [
   {
     name: "John Doe",
     description:
