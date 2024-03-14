@@ -14,16 +14,16 @@ export default function Nav({ label, url, dropdown }: (typeof links)[0]) {
       href={url}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`px-3 outline-[2.25px] font-semibold active:outline-dashed focus:outline-dashed hover:text-primary transition-all duration-150
+      className={`px-3 outline-[2.25px] text-sm font-semibold active:outline-dashed focus:outline-dashed hover:text-primary transition-all duration-150
       ${isActive ? "text-primary font-extrabold" : "text-neutral-800"}`}
     >
       <div className="w-full flex justify-end">
         <div
           className={
-            "hr h-[2px] bg-primary transition-all duration-150 " +
+            "hr h-[1px] bg-primary transition-all ease-in-out duration-150 " +
             (isHovered
               ? "w-full opacity-100 transform translate-x-0"
-              : "w-[0%] opacity-0 delay-200 transform translate-x-2")
+              : "w-[0%] opacity-0 transform translate-x-3")
           }
         />
       </div>
@@ -33,10 +33,10 @@ export default function Nav({ label, url, dropdown }: (typeof links)[0]) {
       </div>
       <div
         className={
-          "hr h-[2px] bg-primary transition-all duration-150 " +
+          "hr h-[1px] bg-primary transition-all ease-in-out duration-150 " +
           (isHovered
             ? "w-full opacity-100 transform -translate-x-0"
-            : "w-[0%] opacity-0 delay-200 transform -translate-x-2")
+            : "w-[0%] opacity-0 transform -translate-x-3")
         }
       />
     </Link>

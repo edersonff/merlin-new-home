@@ -14,6 +14,9 @@ import { BiPlus } from "react-icons/bi";
 import Service from "@/components/Service";
 import Testemotional from "@/components/Testemotional";
 import Forms from "@/sections/forms";
+import Contact from "@/components/Contact";
+import { MdEmail, MdPhone, MdSupport } from "react-icons/md";
+import Link from "next/link";
 
 const about: {
   title: string;
@@ -85,7 +88,7 @@ export default function Home() {
             </div>
             <Lottie
               animationData={hero}
-              className="transform scale-x-[-1] max-w-[650px] w-full"
+              className="transform scale-x-[-1] max-w-[650px] w-full min-h-[512px]"
               style={{ width: "100%", height: "100%" }}
             />
           </div>
@@ -387,6 +390,8 @@ export default function Home() {
           </div>
         </div>
 
+        <Forms />
+
         <div className="w-full bg-gradient-to-r to-primary from-secondary py-[108px]">
           <div className="content flex justify-between items-center gap-10">
             <div className="flex flex-1 flex-col justify-between">
@@ -420,7 +425,73 @@ export default function Home() {
           </div>
         </div>
 
-        <Forms />
+        <div className="py-32 bg-dark text-center">
+          <div className="content flex gap-main">
+            <div className="flex-1">
+              <Contact
+                title="Mande um Email:"
+                description="Sit unde sint maiores fugiat dolor. Invere fugit et tempore fugiat"
+                Icon={MdEmail}
+              >
+                <Link
+                  href="mailto:hello@merlin.com"
+                  className="font-bold text-primary hover:underline underline-offset-4"
+                >
+                  hello@merlin.com
+                </Link>
+              </Contact>
+            </div>
+
+            <div className="flex-1">
+              <Contact
+                title="Ligue para nós:"
+                description="Sit unde sint maiores fugiat dolor. Invere fugit et tempore fugiat"
+                Icon={MdPhone}
+              >
+                <Link
+                  href="tel:+5511999999999"
+                  className="font-bold text-primary hover:underline underline-offset-4"
+                >
+                  +55 11 99999-9999
+                </Link>
+              </Contact>
+            </div>
+
+            <div className="flex-1">
+              <Contact
+                title="Suporte:"
+                description="Sit unde sint maiores fugiat dolor. Invere fugit et tempore fugiat"
+                Icon={MdSupport}
+              >
+                <ButtonOutlined>Centro de Ajuda</ButtonOutlined>
+              </Contact>
+            </div>
+          </div>
+        </div>
+
+        <div className="py-48 relative flex-center text-white">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="full-absolute object-cover -z-[1]"
+          >
+            <source src="/img/banner/street.mp4" type="video/mp4" />
+          </video>
+
+          <div className="full-absolute bg-black/75 -z-[1]" />
+
+          <div className="content flex flex-col text-center">
+            <h2 className="text-7xl mb-2.5 font-extrabold">Localização</h2>
+            <h3 className="text-4xl mb-10">Av. Brig. Faria Lima, 1811</h3>
+            <p className="text-[12px] max-w-main-6">
+              Crie trabalhos incríveis em praticamente todos os seus
+              dispositivos – da área de trabalho à Web – usando as ferramentas
+              certas para sua casa e para sua empresa.
+            </p>
+          </div>
+        </div>
       </main>
     </>
   );

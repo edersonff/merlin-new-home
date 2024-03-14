@@ -18,7 +18,7 @@ export default function Button({
     <button
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`${className} ${hoverClass} bg-primary text-white unselectable font-extrabold rounded-full py-[10px] px-8 transition-all duration-200`}
+      className={`${className} ${hoverClass} bg-primary text-sm text-white unselectable font-extrabold rounded-full py-[10px] px-8 transition-all duration-200`}
       {...props}
     >
       {children}
@@ -44,7 +44,7 @@ export function ButtonOutlined({
     <button
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`${className} ${hoverClass} bg-primary/0 unselectable text-primary border font-extrabold border-primary rounded-full py-[10px] px-8 transition-all duration-200 hover:x-[bg-primary/100,text-white]`}
+      className={`${className} ${hoverClass} bg-primary/0 text-sm unselectable text-primary border font-extrabold border-primary rounded-full py-[10px] px-8 transition-all duration-200 hover:x-[bg-primary/100,text-white]`}
       {...props}
     >
       {children}
