@@ -33,15 +33,15 @@ body {
     -o-user-drag: none;
     user-drag: none;
   }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
 }
 
 @layer components {
   .content {
     @apply max-w-[1140px] mx-auto;
-  }
-
-  .flex-center {
-    @apply flex justify-center items-center;
   }
 
   .full-absolute {

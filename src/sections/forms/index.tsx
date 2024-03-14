@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Forms() {
   return (
-    <div className="py-20 w-full bg-dark-light">
+    <div className="py-36 w-full bg-dark-light">
       <div className="content flex">
         <div className="flex-1 flex flex-col gap-10">
           <div>
