@@ -8,9 +8,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: {
     template:
-      "%s | Desenvolvimento de Software e Consultoria em TI em Jaraguá do Sul",
+      "%s - Desenvolvimento de Software e Consultoria em TI em Jaraguá do Sul",
     default:
-      "Merlin Tecnologia | Desenvolvimento de Software e Consultoria em TI em Jaraguá do Sul",
+      "Merlin Tecnologia - Desenvolvimento de Software e Consultoria em TI em Jaraguá do Sul",
   },
   description:
     "A Merlin oferece soluções de software personalizadas para empresas. Nossa equipe especializada desenvolve ferramentas adaptadas às necessidades específicas de cada negócio. Contate-nos para descobrir como podemos ajudar a impulsionar o seu sucesso.",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     url: process.env.NEXT_PUBLIC_BASE_URL,
     title: {
       template:
-        "%s | Desenvolvimento de Software e Consultoria em TI em Jaraguá do Sul",
+        "%s - Desenvolvimento de Software e Consultoria em TI em Jaraguá do Sul",
       default:
-        "Merlin Tecnologia | Desenvolvimento de Software e Consultoria em TI em Jaraguá do Sul",
+        "Merlin Tecnologia - Desenvolvimento de Software e Consultoria em TI em Jaraguá do Sul",
     },
     description:
       "A Merlin oferece soluções de software personalizadas para empresas. Nossa equipe especializada desenvolve ferramentas adaptadas às necessidades específicas de cada negócio. Contate-nos para descobrir como podemos ajudar a impulsionar o seu sucesso.",
