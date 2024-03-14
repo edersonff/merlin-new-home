@@ -37,7 +37,7 @@ export const metadata: Metadata = {
       "A Merlin oferece soluções de software personalizadas para empresas. Nossa equipe especializada desenvolve ferramentas adaptadas às necessidades específicas de cada negócio. Contate-nos para descobrir como podemos ajudar a impulsionar o seu sucesso.",
     images: [
       {
-        url: process.env.NEXT_PUBLIC_BASE_URL + "/og/image.jpg",
+        url: "/og/image.jpg",
         width: 1280,
         height: 720,
         alt: "Merlin Tecnologia",
