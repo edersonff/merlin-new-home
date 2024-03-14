@@ -17,6 +17,24 @@ import Forms from "@/sections/forms";
 import Contact from "@/components/Contact";
 import { MdEmail, MdPhone, MdSupport } from "react-icons/md";
 import Link from "next/link";
+import Footer from "@/components/Footer";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  FaAws,
+  FaCss3,
+  FaDatabase,
+  FaHtml5,
+  FaJava,
+  FaJs,
+  FaNode,
+  FaPhp,
+  FaPython,
+  FaReact,
+  FaSass,
+  FaWordpress,
+} from "react-icons/fa";
+import { IconType } from "react-icons";
+import { Autoplay } from "swiper/modules";
 
 const about: {
   title: string;
@@ -101,17 +119,41 @@ export default function Home() {
               <b>Tecnologias</b>
               <span className="font-light block">Usadas Na Merlin</span>
             </h2>
-            {["html", "css", "sass", "git", "json", "npm"].map(
-              (script, index) => (
-                <ScriptingWhite
-                  key={index}
-                  type={script as ScriptingType}
-                  width={50}
-                  height={50}
-                />
-              )
-            )}
-            <BiPlus className="text-5xl" />
+            <Swiper
+              spaceBetween={5}
+              className="w-full"
+              modules={[Autoplay]}
+              slidesPerView="auto"
+              loop
+              autoplay
+              navigation
+            >
+              {[
+                FaHtml5,
+                FaCss3,
+                FaJs,
+                FaReact,
+                FaNode,
+                FaJava,
+                FaPython,
+                FaPhp,
+                FaSass,
+                FaWordpress,
+                FaDatabase,
+                FaAws,
+              ].map((Script, index) => (
+                <SwiperSlide key={index}>
+                  <div className="flex-center h-full">
+                    <Script className="text-3xl" />
+                  </div>
+                </SwiperSlide>
+              ))}
+              <SwiperSlide>
+                <div className="flex-center h-full">
+                  <BiPlus className="text-3xl" />
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
 
@@ -260,7 +302,7 @@ export default function Home() {
           </Service>
         </div>
 
-        <div className="py-32 bg-dark">
+        <div className="py-52 bg-dark">
           <div className="content">
             <div className="flex flex-col gap-14 text-white text-center">
               <div>
@@ -362,7 +404,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="pt-40 pb-48 bg-dark">
+        <div className="pt-48 pb-52 bg-dark">
           <div className="content">
             <div className="flex flex-col gap-32 text-white">
               <div>
@@ -425,7 +467,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="py-32 bg-dark text-center">
+        <div className="py-40 bg-dark text-center">
           <div className="content flex gap-main">
             <div className="flex-1">
               <Contact
@@ -493,6 +535,8 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      <Footer />
     </>
   );
 }

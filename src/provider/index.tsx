@@ -1,10 +1,13 @@
 import React from "react";
 import FontProvider from "./font";
+import SwiperProvider from "./swiper";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <FontProvider>{children}</FontProvider>
+      <FontProvider>
+        <SwiperProvider>{children}</SwiperProvider>
+      </FontProvider>
     </>
   );
 }
