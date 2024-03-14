@@ -21,9 +21,8 @@ export default function Service({
       <Image
         src={image}
         alt={title}
-        layout="fill"
-        objectFit="cover"
-        className="z-[-1] group-hover:scale-105 transition-transform duration-300"
+        fill
+        className="z-[-1] group-hover:scale-105 transition-transform duration-300 object-cover"
       />
 
       <div className="full-absolute -z-[1] bg-gradient-to-b from-dark/80 via-dark/0 to-dark/0" />

@@ -14,7 +14,7 @@ export default function Testemotional({
   return (
     <div className="flex-1 relative bg-dark-light text-white rounded-main px-12 py-12">
       <div className="absolute top-0 left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-0 rounded-full border-[10px] border-dark w-24 h-24 overflow-hidden">
-        <Image src={photo} alt={name} layout="fill" objectFit="cover" />
+        <Image src={photo} alt={name} fill className="object-cover" />
       </div>
 
       <Image

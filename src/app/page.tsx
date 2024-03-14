@@ -35,6 +35,7 @@ import {
 } from "react-icons/fa";
 import { IconType } from "react-icons";
 import { Autoplay } from "swiper/modules";
+import Gallery from "@/components/Gallery";
 
 const about: {
   title: string;
@@ -123,7 +124,7 @@ export default function Home() {
               spaceBetween={5}
               className="w-full"
               modules={[Autoplay]}
-              slidesPerView="auto"
+              slidesPerView={10}
               loop
               autoplay
               navigation
@@ -163,7 +164,7 @@ export default function Home() {
               <div className="flex-1">
                 <Heading subtitle="Sobre nós">
                   <b className="font-extrabold">
-                    Acreditamos que a<br />
+                    Acreditamos que a <br />
                     <span className="font-light">Simplicidade</span> é a Chave
                   </b>
                 </Heading>
@@ -187,8 +188,8 @@ export default function Home() {
               <Image
                 src="/img/hero/office.jpg"
                 alt="Merlin Hero"
-                layout="fill"
-                objectFit="cover"
+                fill
+                className="object-cover"
               />
             </div>
           </div>
@@ -248,14 +249,13 @@ export default function Home() {
           <Image
             src="/img/services/tools.jpg"
             alt="Serviço de criação de ferramentas da Merlin"
-            layout="fill"
-            objectFit="cover"
-            className="z-[-1]"
+            fill
+            className="z-[-1] object-cover"
           />
           <div className="content py-32 text-white">
             <div className="w-2/3">
               <h2 className="text-[64px] mb-7 leading-[100%] font-light">
-                <b className="font-extrabold block">Soluções e Ferramentas</b>
+                <b className="font-extrabold block">Soluções e Ferramentas </b>
                 Para projetos
               </h2>
               <p className="text-[12px] mb-12">
@@ -321,49 +321,31 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-main">
                 <div className="flex gap-main min-h-[367px]">
-                  <Image
+                  <Gallery
                     src="https://cobra.art.br/wp-content/uploads/2023/10/Cobra-Design-Apresentacao-Redes-HS_01.png"
                     alt="Projetos da Merlin"
-                    width={300}
-                    height={300}
-                    className="aspect-square flex-1"
                   />
-                  <Image
+                  <Gallery
                     src="https://cobra.art.br/wp-content/uploads/2023/10/Cobra-Design-Apresentacao-Redes-HS_02.png"
                     alt="Projetos da Merlin"
-                    width={300}
-                    height={300}
-                    className="aspect-square flex-1"
                   />
-                  <Image
+                  <Gallery
                     src="https://cobra.art.br/wp-content/uploads/2023/10/Cobra-Design-Apresentacao-Redes-HS_03.png"
                     alt="Projetos da Merlin"
-                    width={300}
-                    height={300}
-                    className="aspect-square flex-1"
                   />
                 </div>
                 <div className="flex gap-main min-h-[367px]">
-                  <Image
+                  <Gallery
                     src="https://cobra.art.br/wp-content/uploads/2023/04/Cobra-Design-Apresentacao-Clube-556_01-1.png"
                     alt="Projetos da Merlin"
-                    width={300}
-                    height={300}
-                    className="aspect-square flex-1"
                   />
-                  <Image
+                  <Gallery
                     src="https://cobra.art.br/wp-content/uploads/2023/04/Cobra-Design-Apresentacao-Clube-556_02-1.png"
                     alt="Projetos da Merlin"
-                    width={300}
-                    height={300}
-                    className="aspect-square flex-1"
                   />
-                  <Image
+                  <Gallery
                     src="https://cobra.art.br/wp-content/uploads/2023/04/Cobra-Design-Apresentacao-Clube-556_03-1.png"
                     alt="Projetos da Merlin"
-                    width={300}
-                    height={300}
-                    className="aspect-square flex-1"
                   />
                 </div>
               </div>

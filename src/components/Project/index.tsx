@@ -34,10 +34,9 @@ export default function Project({
         </div>
         <div className="full-absolute transition-opacity duration-300 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 z-10" />
         <Image
-          className="transition-transform duration-100 ease-in-out group-hover:scale-105"
+          className="object-cover transition-transform duration-100 ease-in-out group-hover:scale-105"
           src={image}
-          layout="fill"
-          objectFit="cover"
+          fill
           alt={title}
         />
       </Link>
