@@ -34,6 +34,10 @@ body {
     user-drag: none;
   }
 
+  .text-primary-important {
+    @apply text-[#6938D9] !important;
+  }
+
   .flex-center {
     @apply flex justify-center items-center;
   }
