@@ -36,6 +36,7 @@ import {
 import { IconType } from "react-icons";
 import { Autoplay } from "swiper/modules";
 import Gallery from "@/components/Gallery";
+import { motion } from "framer-motion";
 
 const about: {
   title: string;
@@ -44,37 +45,37 @@ const about: {
   {
     title: "Missão",
     description:
-      "Officiis enim at aut in dolorum at. Voluptate veniam molestias minus alias praesentium maxime magni. Assumenda rerum laborum vel quia molestias qui vero accusamus. Commodi totam non rem aut.Repudiandae laboriosam sint tempora est aliquam officiis voluptatum qui aspernatur",
+      "Nossa <b>principal missão</b> é criar softwares, os quais possam ser acessíveis e fáceis de utilizar por <b>empresas e pessoas</b>. Para atingir esse objetivo, utilizamos as tecnologias mais <b>recentes e eficientes</b> do mercado.",
   },
   {
     title: "Visão",
     description:
-      "Officiis enim at aut in dolorum at. Voluptate veniam molestias minus alias praesentium maxime magni. Assumenda rerum laborum vel quia molestias qui vero accusamus. Commodi totam non rem aut.Repudiandae laboriosam sint tempora est aliquam officiis voluptatum qui aspernatur",
+      "Acreditamos que a tecnologia está sempre em <b>constate evolução</b>, no qual, muitas vezes, pode ser difícil de acompanhar. O que poderá criar uma <b>barreira e ruído</b> na comunicação entre a software e o usuário.",
   },
   {
     title: "Valores",
     description:
-      "Officiis enim at aut in dolorum at. Voluptate veniam molestias minus alias praesentium maxime magni. Assumenda rerum laborum vel quia molestias qui vero accusamus. Commodi totam non rem aut.Repudiandae laboriosam sint tempora est aliquam officiis voluptatum qui aspernatur",
+      "<b>Acessibilidade e inovação</b> andando juntas. Acreditamos que a tecnologia pode ser <b>acessível e inovadora</b> ao mesmo tempo, sem a necessidade de ser complexa e difícil de utilizar.",
   },
 ];
 
 const testemonials = [
   {
-    name: "John Doe",
+    name: "Ricardo Almeida",
     description:
-      "Et non nobis illum sed a repellat qui porro occaecati. Deserunt ut eos iure. Voluptatem deleniti blanditiis ab. Nesciunt fuga quam voluptatem quisquam nulla. Quasi ea neque.Perspiciatis dolorem iure. Vitae consectetur quaerat exercitationem numquam deserunt est et qui cum. Est voluptas quo voluptatem possimus vero quo est. Molestiae corporis",
+      "Os softwares da Merlin são fáceis de usar e ajudaram a melhorar a nossa produtividade. A acessibilidade das ferramentas facilitou o treinamento da equipe, reduziu o tempo de adaptação e tornou nosso dia a dia mais eficiente",
     photo: "https://randomuser.me/api/portraits/med/men/36.jpg",
   },
   {
-    name: "John Doe",
+    name: "Fernanda Souza",
     description:
-      "Et non nobis illum sed a repellat qui porro occaecati. Deserunt ut eos iure. Voluptatem deleniti blanditiis ab. Nesciunt fuga quam voluptatem quisquam nulla. Quasi ea neque.Perspiciatis dolorem iure. Vitae consectetur quaerat exercitationem numquam deserunt est et qui cum. Est voluptas quo voluptatem possimus vero quo est. Molestiae corporis",
+      "Os produtos da Merlin simplificaram nossa rotina com uma interface intuitiva. A acessibilidade reduziu o tempo de treinamento, aumentou a eficiência e permitiu que nossa equipe se concentrasse em tarefas mais importantes",
     photo: "https://randomuser.me/api/portraits/med/men/35.jpg",
   },
   {
-    name: "John Doe",
+    name: "João Mendes  ",
     description:
-      "Et non nobis illum sed a repellat qui porro occaecati. Deserunt ut eos iure. Voluptatem deleniti blanditiis ab. Nesciunt fuga quam voluptatem quisquam nulla. Quasi ea neque.Perspiciatis dolorem iure. Vitae consectetur quaerat exercitationem numquam deserunt est et qui cum. Est voluptas quo voluptatem possimus vero quo est. Molestiae corporis",
+      "A simplicidade e inovação dos softwares da Merlin melhoraram nossa operação. A facilidade de uso aumentou a satisfação dos colaboradores, otimizou nossos processos diários e nos permitiu alcançar melhores resultados",
     photo: "https://randomuser.me/api/portraits/med/men/40.jpg",
   },
 ];
@@ -93,14 +94,14 @@ export default function Home() {
                   Aplicativos e <span className="text-primary">serviços</span>
                 </h1>
                 <p className="text-[11px] mb-16">
-                  Crie trabalhos incríveis em praticamente todos os seus
-                  dispositivos – da área de trabalho à Web – usando as
-                  ferramentas certas para sua casa e para sua empresa.
+                  Criamos trabalhos incríveis e minimalistas para praticamente
+                  todos os tipos de dispositivos – de área de trabalho à Web –
+                  usando as ferramentas certas para você e para sua empresa.
                 </p>
                 <div className="flex gap-main">
                   <Button className="flex-1">Conheça nossos serviços</Button>
                   <ButtonOutlined className="min-w-main-2">
-                    Educação
+                    Sobre
                   </ButtonOutlined>
                 </div>
               </div>
@@ -169,12 +170,15 @@ export default function Home() {
                   </b>
                 </Heading>
                 <p className="mb-16 text-[12px]">
-                  Crie trabalhos incríveis em praticamente todos os seus
-                  dispositivos – da área de trabalho à Web – usando as
-                  ferramentas certas para sua casa e para sua empresa. Crie
-                  trabalhos incríveis em praticamente todos os seus dispositivos
-                  – da área de trabalho à Web – usando as ferramentas certas
-                  para sua casa e para sua empresa.
+                  Temos como principal pilar a <b>simplicidade</b> e a{" "}
+                  <b>facilidade</b> de uso. Acreditamos que a tecnologia deve
+                  ser <b>acessível</b> & <b>facilitada</b>, assim como a
+                  comunicação e a interação com o usuário. <br />
+                  Desejamos que nossos produtos sejam intuitivos e <b>
+                    fáceis
+                  </b>{" "}
+                  de usar, para que qualquer pessoa possa utilizá-los sem
+                  dificuldades.
                 </p>
                 <ButtonOutlined>Vamos-lá!</ButtonOutlined>
               </div>
@@ -212,9 +216,15 @@ export default function Home() {
             <div>
               <div className="content relative z-10 text-white text-center">
                 <p className="font-bold">Nossos projetos</p>
-                <h2 className="text-8xl font-extralight tracking-[40px] -mt-2">
+                <motion.h2
+                  initial={{ opacity: 0, letterSpacing: "0px" }}
+                  whileInView={{ opacity: 1, letterSpacing: "40px" }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                  viewport={{ once: true }}
+                  className="text-8xl font-extralight tracking-[40px] -mt-2"
+                >
                   Inovação
-                </h2>
+                </motion.h2>
               </div>
             </div>
           </div>
@@ -237,7 +247,10 @@ export default function Home() {
                 className="flex-1 rounded-main bg-dark-light text-white px-8 pt-[50px] pb-11"
               >
                 <h3 className="text-4xl mb-6 font-extrabold">{item.title}</h3>
-                <p className="text-[12px]">{item.description}</p>
+                <p
+                  className="text-[12px]"
+                  dangerouslySetInnerHTML={{ __html: item.description }}
+                />
               </div>
             ))}
           </div>
@@ -259,9 +272,8 @@ export default function Home() {
                 Para projetos
               </h2>
               <p className="text-[12px] mb-12">
-                Crie trabalhos incríveis em praticamente todos os seus
-                dispositivos – da área de trabalho à Web – usando as ferramentas
-                certas para
+                Descubra nossos softwares e ferramentas que podem ajudar você e
+                sua empresa a crescer e se desenvolver.
               </p>
               <Button>Quero conhecer</Button>
             </div>
@@ -269,36 +281,36 @@ export default function Home() {
         </div>
         <div className="flex">
           <Service
-            subtitle="Desenvolvimento Web"
-            title="Plataformas Digitais e Aplicações"
+            subtitle="Android e iOS"
+            title="Aplicativos para Celulares"
             image="/img/services/mobile.jpg"
           >
-            Crie trabalhos incríveis em praticamente todos os seus dispositivos
-            – da área de trabalho à Web – usando as ferramentas certas para
+            Construa aplicativos incríveis para Android e iOS, com softwares
+            como React Native e Flutter
           </Service>
           <Service
             subtitle="Desenvolvimento Web"
             title="Plataformas Digitais e Aplicações"
             image="/img/services/web.jpg"
           >
-            Crie trabalhos incríveis em praticamente todos os seus dispositivos
-            – da área de trabalho à Web – usando as ferramentas certas para
+            Softwares construidos para a web, com tecnologias como React,
+            Next.js, Node.js e muito mais
           </Service>
           <Service
-            subtitle="Desenvolvimento Web"
-            title="Plataformas Digitais e Aplicações"
+            subtitle="Desktop"
+            title="Softwares para Computadores"
             image="/img/services/desktop.jpg"
           >
-            Crie trabalhos incríveis em praticamente todos os seus dispositivos
-            – da área de trabalho à Web – usando as ferramentas certas para
+            Crie softwares para computadores com tecnologias como Electron e
+            React
           </Service>
           <Service
-            subtitle="Desenvolvimento Web"
-            title="Plataformas Digitais e Aplicações"
+            subtitle="Design e UX/UI"
+            title="Concepção e Design de Projetos"
             image="/img/services/design.jpg"
           >
-            Crie trabalhos incríveis em praticamente todos os seus dispositivos
-            – da área de trabalho à Web – usando as ferramentas certas para
+            Conte com nossos designers para criar interfaces incríveis e
+            intuitivas
           </Service>
         </div>
 
@@ -313,38 +325,37 @@ export default function Home() {
                 </Heading>
                 <div className="flex-center">
                   <p className="max-w-main-6 text-[12px]">
-                    Crie trabalhos incríveis em praticamente todos os seus
-                    dispositivos – da área de trabalho à Web – usando as
-                    ferramentas certas para sua casa e para sua empresa.
+                    Conheça alguns dos nossos softwares web que foram
+                    divulgados, e veja como podemos ajudar você e sua empresa.
                   </p>
                 </div>
               </div>
               <div className="flex flex-col gap-main">
                 <div className="flex gap-main min-h-[367px]">
                   <Gallery
-                    src="https://cobra.art.br/wp-content/uploads/2023/10/Cobra-Design-Apresentacao-Redes-HS_01.png"
+                    src="/img/projects/01.jpg"
                     alt="Projetos da Merlin"
                   />
                   <Gallery
-                    src="https://cobra.art.br/wp-content/uploads/2023/10/Cobra-Design-Apresentacao-Redes-HS_02.png"
+                    src="/img/projects/02.jpg"
                     alt="Projetos da Merlin"
                   />
                   <Gallery
-                    src="https://cobra.art.br/wp-content/uploads/2023/10/Cobra-Design-Apresentacao-Redes-HS_03.png"
+                    src="/img/projects/03.jpg"
                     alt="Projetos da Merlin"
                   />
                 </div>
                 <div className="flex gap-main min-h-[367px]">
                   <Gallery
-                    src="https://cobra.art.br/wp-content/uploads/2023/04/Cobra-Design-Apresentacao-Clube-556_01-1.png"
+                    src="/img/projects/04.jpg"
                     alt="Projetos da Merlin"
                   />
                   <Gallery
-                    src="https://cobra.art.br/wp-content/uploads/2023/04/Cobra-Design-Apresentacao-Clube-556_02-1.png"
+                    src="/img/projects/05.jpg"
                     alt="Projetos da Merlin"
                   />
                   <Gallery
-                    src="https://cobra.art.br/wp-content/uploads/2023/04/Cobra-Design-Apresentacao-Clube-556_03-1.png"
+                    src="/img/projects/06.jpg"
                     alt="Projetos da Merlin"
                   />
                 </div>
@@ -362,7 +373,7 @@ export default function Home() {
                 </b>
               </Heading>
               <div>
-                <Button className="min-w-main-3 bg-white text-primary">
+                <Button className="min-w-main-3 bg-white text-primary-important">
                   Quero Conhecer
                 </Button>
               </div>
@@ -397,9 +408,8 @@ export default function Home() {
                 </Heading>
                 <div className="flex-center text-center">
                   <p className="max-w-main-6 text-[12px]">
-                    Crie trabalhos incríveis em praticamente todos os seus
-                    dispositivos – da área de trabalho à Web – usando as
-                    ferramentas certas para sua casa e para sua empresa.
+                    Veja quem confiou em nós e o que eles têm a dizer sobre o
+                    nosso trabalho
                   </p>
                 </div>
               </div>
@@ -454,7 +464,7 @@ export default function Home() {
             <div className="flex-1">
               <Contact
                 title="Mande um Email:"
-                description="Sit unde sint maiores fugiat dolor. Invere fugit et tempore fugiat"
+                description="Faremos o possível para responder o mais rápido possível."
                 Icon={MdEmail}
               >
                 <Link
@@ -469,7 +479,7 @@ export default function Home() {
             <div className="flex-1">
               <Contact
                 title="Ligue para nós:"
-                description="Sit unde sint maiores fugiat dolor. Invere fugit et tempore fugiat"
+                description="Caso prefira, podemos conversar por telefone."
                 Icon={MdPhone}
               >
                 <Link
@@ -484,7 +494,7 @@ export default function Home() {
             <div className="flex-1">
               <Contact
                 title="Suporte:"
-                description="Sit unde sint maiores fugiat dolor. Invere fugit et tempore fugiat"
+                description="Se houver algum problema para nos contatar, ou se precisar de ajuda."
                 Icon={MdSupport}
               >
                 <ButtonOutlined>Centro de Ajuda</ButtonOutlined>
@@ -508,11 +518,10 @@ export default function Home() {
 
           <div className="content flex flex-col text-center">
             <h2 className="text-7xl mb-2.5 font-extrabold">Localização</h2>
-            <h3 className="text-4xl mb-10">Av. Brig. Faria Lima, 1811</h3>
+            <h3 className="text-3xl mb-10">Bairro Rau. Willy Dorow, 141</h3>
             <p className="text-[12px] max-w-main-6">
-              Crie trabalhos incríveis em praticamente todos os seus
-              dispositivos – da área de trabalho à Web – usando as ferramentas
-              certas para sua casa e para sua empresa.
+              Caso precise ter um atendimento presencialmente conosco, podemos
+              lhe atender aqui em Jaraguá do Sul, SC
             </p>
           </div>
         </div>
