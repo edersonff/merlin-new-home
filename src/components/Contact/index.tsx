@@ -16,11 +16,11 @@ export default function Contact({
     <>
       <div className="flex flex-col  items-center gap-main text-center text-white mb-8">
         <div className="p-2 rounded-main bg-dark-light">
-          <Icon className="text-5xl" />
+          <Icon className="text-5xl small:text-3xl" />
         </div>
         <div>
-          <h3 className="text-lg font-bold mb-4">{title}</h3>
-          <p className="text-neutral-300">{description}</p>
+          <h3 className="text-lg small:text-base font-bold mb-4">{title}</h3>
+          <p className="text-neutral-300 small:text-xs">{description}</p>
         </div>
       </div>
       <div className="w-full flex-center">{children}</div>

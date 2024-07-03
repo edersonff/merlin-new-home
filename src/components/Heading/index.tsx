@@ -15,8 +15,12 @@ export default function Heading({
   if (white) {
     return (
       <div className="text-white">
-        <p className="text-[15px] mb-2 font-semibold">{subtitle}</p>
-        <h2 className="text-5xl mb-7 leading-[1.2]">{children}</h2>
+        <p className="text-[15px] small:text-xs mb-2 font-semibold">
+          {subtitle}
+        </p>
+        <h2 className="text-5xl small:text-3xl mb-7 leading-[1.2]">
+          {children}
+        </h2>
         <Image
           src="/img/svg/bottom-heading-white.svg"
           alt="Merlin Logo"
@@ -31,10 +35,12 @@ export default function Heading({
   if (align === "center") {
     return (
       <div className="text-center">
-        <p className="text-primary text-[15px] mb-2 font-semibold">
+        <p className="text-primary text-[15px] small:text-xs mb-2 font-semibold">
           {subtitle}
         </p>
-        <h2 className="text-5xl mb-7 leading-[1.2]">{children}</h2>
+        <h2 className="text-5xl small:text-3xl mb-7 leading-[1.2]">
+          {children}
+        </h2>
         <div className="flex-center">
           <Image
             src="/img/svg/bottom-heading.svg"
@@ -50,8 +56,10 @@ export default function Heading({
 
   return (
     <div>
-      <p className="text-primary text-[15px] mb-2 font-semibold">{subtitle}</p>
-      <h2 className="text-5xl mb-7 leading-[1.2]">{children}</h2>
+      <p className="text-primary text-[15px] small:text-xs mb-2 font-semibold">
+        {subtitle}
+      </p>
+      <h2 className="text-5xl small:text-3xl mb-7 leading-[1.2]">{children}</h2>
       <Image
         src="/img/svg/bottom-heading.svg"
         alt="Merlin Logo"

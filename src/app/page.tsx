@@ -2,7 +2,6 @@
 
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
-import Lottie from "lottie-react";
 import Image from "next/image";
 import hero from "@/../public/lottie/hero.json";
 import Button, { ButtonOutlined } from "@/components/Button";
@@ -36,7 +35,13 @@ import {
 import { IconType } from "react-icons";
 import { Autoplay } from "swiper/modules";
 import Gallery from "@/components/Gallery";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import dynamic from "next/dynamic";
+import { useIsSmall } from "@/hooks/useMediaQuery";
+import Loading from "./loading";
+import { useState } from "react";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const about: {
   title: string;
@@ -81,16 +86,21 @@ const testemonials = [
 ];
 
 export default function Home() {
+  const [isLoading, setLoading] = useState(true);
+  const isSmall = useIsSmall();
   return (
     <>
+      <AnimatePresence>
+        {isLoading && <Loading isComponent={true} />}
+      </AnimatePresence>
       <Header />
       <div className="bg-gradient-to-b from-white to-violet-200">
         <Navbar />
         <div className="pb-32 pt-12 flex">
-          <div className="content flex w-full gap-main">
-            <div className="flex-1 flex-center min-w-main-5">
+          <div className="content flex w-full small:flex-col gap-main">
+            <div className="flex-1 flex-center big:min-w-main-5">
               <div>
-                <h1 className="font-extrabold text-7xl mb-7">
+                <h1 className="font-extrabold text-7xl small:text-5xl mb-7">
                   Aplicativos e <span className="text-primary">serviços</span>
                 </h1>
                 <p className="text-[11px] mb-16">
@@ -98,7 +108,7 @@ export default function Home() {
                   todos os tipos de dispositivos – de área de trabalho à Web –
                   usando as ferramentas certas para você e para sua empresa.
                 </p>
-                <div className="flex gap-main">
+                <div className="flex gap-main small:flex-col">
                   <Button className="flex-1">Conheça nossos serviços</Button>
                   <ButtonOutlined className="min-w-main-2">
                     Sobre
@@ -106,18 +116,21 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <Lottie
-              animationData={hero}
-              className="transform scale-x-[-1] max-w-[650px] w-full min-h-[512px]"
-              style={{ width: "100%", height: "100%" }}
-            />
+            {
+              <Lottie
+                animationData={hero}
+                className="transform scale-x-[-1] max-w-[650px] w-full min-h-[512px]"
+                style={{ width: "100%", height: "100%" }}
+                // onDOMLoaded={() => setLoading(false)}
+              />
+            }
           </div>
         </div>
       </div>
       <main>
         <div className="w-full bg-secondary text-white">
-          <div className="py-[70px] flex gap-main content">
-            <h2 className="text-2xl leading-[135%] min-w-main-3">
+          <div className="py-[70px] flex small:flex-col gap-main content">
+            <h2 className="text-2xl leading-[135%] min-w-main-3 small:text-center">
               <b>Tecnologias</b>
               <span className="font-light block">Usadas Na Merlin</span>
             </h2>
@@ -126,6 +139,23 @@ export default function Home() {
               className="w-full"
               modules={[Autoplay]}
               slidesPerView={10}
+              breakpoints={{
+                1: {
+                  slidesPerView: 4,
+                },
+                640: {
+                  slidesPerView: 5,
+                },
+                768: {
+                  slidesPerView: 6,
+                },
+                1024: {
+                  slidesPerView: 7,
+                },
+                1280: {
+                  slidesPerView: 10,
+                },
+              }}
               loop
               autoplay
               navigation
@@ -160,7 +190,7 @@ export default function Home() {
         </div>
 
         <div className="w-full py-36">
-          <div className="content flex gap-[100px]">
+          <div className="content flex gap-[100px] small:x-[flex-col,gap-16]">
             <div className="flex-center py-20">
               <div className="flex-1">
                 <Heading subtitle="Sobre nós">
@@ -169,7 +199,7 @@ export default function Home() {
                     <span className="font-light">Simplicidade</span> é a Chave
                   </b>
                 </Heading>
-                <p className="mb-16 text-[12px]">
+                <p className="mb-16 text-[12px] small:text-[10px]">
                   Temos como principal pilar a <b>simplicidade</b> e a{" "}
                   <b>facilidade</b> de uso. Acreditamos que a tecnologia deve
                   ser <b>acessível</b> & <b>facilitada</b>, assim como a
@@ -183,8 +213,8 @@ export default function Home() {
                 <ButtonOutlined>Vamos-lá!</ButtonOutlined>
               </div>
             </div>
-            <div className="min-w-[466px] relative">
-              <div className="w-[144px] h-[144px] rounded-full absolute z-10 bg-secondary flex-center border-[12px] border-white p-1 top-[50%] transform translate-x-[-50%] translate-y-[-50%]">
+            <div className="big:min-w-[466px] small:h-[50vh] relative">
+              <div className="w-[144px] h-[144px] rounded-full absolute z-10 bg-secondary flex-center border-[12px] border-white p-1 big:top-[50%] small:left-[50%] transform translate-x-[-50%] translate-y-[-50%]">
                 <p className="text-white">
                   Desde <b>2022</b>
                 </p>
@@ -206,22 +236,25 @@ export default function Home() {
               loop
               muted
               playsInline
-              className="full-absolute object-cover grayscale"
+              className="absolute-full object-cover grayscale"
             >
               <source src="/img/banner/project.mp4" type="video/mp4" />
             </video>
 
-            <div className="full-absolute bg-gradient-to-b from-transparent to-dark-light" />
+            <div className="absolute-full bg-gradient-to-b from-transparent to-dark-light" />
 
             <div>
               <div className="content relative z-10 text-white text-center">
                 <p className="font-bold">Nossos projetos</p>
                 <motion.h2
                   initial={{ opacity: 0, letterSpacing: "0px" }}
-                  whileInView={{ opacity: 1, letterSpacing: "40px" }}
+                  whileInView={{
+                    opacity: 1,
+                    letterSpacing: isSmall ? "10px" : "40px",
+                  }}
                   transition={{ duration: 1.5, ease: "easeInOut" }}
                   viewport={{ once: true }}
-                  className="text-8xl font-extralight tracking-[40px] -mt-2"
+                  className="text-8xl small:text-5xl font-extralight tracking-[40px] -mt-2"
                 >
                   Inovação
                 </motion.h2>
@@ -240,7 +273,7 @@ export default function Home() {
 
         <div className="bg-dark relative -mt-[225px] pt-[400px] pb-[200px] ">
           <h2 className="hidden">Sobre nós</h2>
-          <div className="content flex gap-main">
+          <div className="content flex gap-main small:flex-col">
             {about.map((item, index) => (
               <div
                 key={index}
@@ -248,7 +281,7 @@ export default function Home() {
               >
                 <h3 className="text-4xl mb-6 font-extrabold">{item.title}</h3>
                 <p
-                  className="text-[12px]"
+                  className="text-[12px] small:text-[10px]"
                   dangerouslySetInnerHTML={{ __html: item.description }}
                 />
               </div>
@@ -266,12 +299,12 @@ export default function Home() {
             className="z-[-1] object-cover"
           />
           <div className="content py-32 text-white">
-            <div className="w-2/3">
-              <h2 className="text-[64px] mb-7 leading-[100%] font-light">
+            <div className="big:w-2/3">
+              <h2 className="text-[64px] small:text-5xl mb-7 leading-[100%] font-light">
                 <b className="font-extrabold block">Soluções e Ferramentas </b>
                 Para projetos
               </h2>
-              <p className="text-[12px] mb-12">
+              <p className="text-[12px] small:text-[10px] mb-12">
                 Descubra nossos softwares e ferramentas que podem ajudar você e
                 sua empresa a crescer e se desenvolver.
               </p>
@@ -279,7 +312,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex">
+        <div className="flex small:flex-col">
           <Service
             subtitle="Android e iOS"
             title="Aplicativos para Celulares"
@@ -324,14 +357,14 @@ export default function Home() {
                   </span>
                 </Heading>
                 <div className="flex-center">
-                  <p className="max-w-main-6 text-[12px]">
+                  <p className="max-w-main-6 text-[12px] small:text-[10px]">
                     Conheça alguns dos nossos softwares web que foram
                     divulgados, e veja como podemos ajudar você e sua empresa.
                   </p>
                 </div>
               </div>
               <div className="flex flex-col gap-main">
-                <div className="flex gap-main min-h-[367px]">
+                <div className="flex gap-main min-h-[367px] small:flex-col">
                   <Gallery
                     src="/img/projects/01.jpg"
                     alt="Projetos da Merlin"
@@ -345,7 +378,7 @@ export default function Home() {
                     alt="Projetos da Merlin"
                   />
                 </div>
-                <div className="flex gap-main min-h-[367px]">
+                <div className="flex gap-main min-h-[367px] small:flex-col">
                   <Gallery
                     src="/img/projects/04.jpg"
                     alt="Projetos da Merlin"
@@ -365,7 +398,7 @@ export default function Home() {
         </div>
 
         <div className="w-full bg-gradient-to-r from-primary to-secondary py-[108px]">
-          <div className="content flex justify-between items-center gap-10">
+          <div className="content flex justify-between items-center gap-10 small:x-[flex-col,gap-16]">
             <div className="flex flex-1 flex-col justify-between">
               <Heading subtitle="Sobre Nós" white={true}>
                 <b className="font-extrabold leading-[1]">
@@ -383,7 +416,7 @@ export default function Home() {
                 Laudantium reprehenderit dolore ea reprehenderit reiciendis ut
                 aspernatur. Sint natus mollitia qui.
               </h3>
-              <p className="text-[12px]">
+              <p className="text-[12px] small:text-[10px]">
                 Et non nobis illum sed a repellat qui porro occaecati. Deserunt
                 ut eos iure. Voluptatem deleniti blanditiis ab. Nesciunt fuga
                 quam voluptatem quisquam nulla. Quasi ea neque. Perspiciatis
@@ -407,13 +440,13 @@ export default function Home() {
                   </span>
                 </Heading>
                 <div className="flex-center text-center">
-                  <p className="max-w-main-6 text-[12px]">
+                  <p className="max-w-main-6 text-[12px] small:text-[10px]">
                     Veja quem confiou em nós e o que eles têm a dizer sobre o
                     nosso trabalho
                   </p>
                 </div>
               </div>
-              <div className="flex gap-main">
+              <div className="flex gap-main small:x-[flex-col,gap-24]">
                 {testemonials.map(({ description, name, photo }, index) => (
                   <Testemotional key={index} name={name} photo={photo}>
                     {description}
@@ -427,7 +460,7 @@ export default function Home() {
         <Forms />
 
         <div className="w-full bg-gradient-to-r to-primary from-secondary py-[108px]">
-          <div className="content flex justify-between items-center gap-10">
+          <div className="content flex justify-between items-center gap-10 small:x-[flex-col,gap-16]">
             <div className="flex flex-1 flex-col justify-between">
               <Heading subtitle="Sobre Nós" white={true}>
                 <b className="font-extrabold leading-[1]">
@@ -435,7 +468,7 @@ export default function Home() {
                 </b>
               </Heading>
               <div>
-                <Button className="min-w-main-3 bg-white text-primary">
+                <Button className="min-w-main-3 bg-white text-primary-important">
                   Quero Conhecer
                 </Button>
               </div>
@@ -445,7 +478,7 @@ export default function Home() {
                 Laudantium reprehenderit dolore ea reprehenderit reiciendis ut
                 aspernatur. Sint natus mollitia qui.
               </h3>
-              <p className="text-[12px]">
+              <p className="text-[12px] small:text-[10px]">
                 Et non nobis illum sed a repellat qui porro occaecati. Deserunt
                 ut eos iure. Voluptatem deleniti blanditiis ab. Nesciunt fuga
                 quam voluptatem quisquam nulla. Quasi ea neque. Perspiciatis
@@ -460,7 +493,7 @@ export default function Home() {
         </div>
 
         <div className="py-40 bg-dark text-center">
-          <div className="content flex gap-main">
+          <div className="content flex gap-main small:x-[flex-col,gap-16]">
             <div className="flex-1">
               <Contact
                 title="Mande um Email:"
@@ -469,7 +502,7 @@ export default function Home() {
               >
                 <Link
                   href="mailto:hello@merlin.com"
-                  className="font-bold text-primary hover:underline underline-offset-4"
+                  className="small:text-xs font-bold text-primary hover:underline underline-offset-4"
                 >
                   hello@merlin.com
                 </Link>
@@ -484,7 +517,7 @@ export default function Home() {
               >
                 <Link
                   href="tel:+5511999999999"
-                  className="font-bold text-primary hover:underline underline-offset-4"
+                  className="small:text-xs font-bold text-primary hover:underline underline-offset-4"
                 >
                   +55 11 99999-9999
                 </Link>
@@ -497,7 +530,9 @@ export default function Home() {
                 description="Se houver algum problema para nos contatar, ou se precisar de ajuda."
                 Icon={MdSupport}
               >
-                <ButtonOutlined>Centro de Ajuda</ButtonOutlined>
+                <ButtonOutlined className="small:text-xs">
+                  Centro de Ajuda
+                </ButtonOutlined>
               </Contact>
             </div>
           </div>
@@ -509,17 +544,21 @@ export default function Home() {
             loop
             muted
             playsInline
-            className="full-absolute object-cover -z-[1]"
+            className="absolute-full object-cover -z-[1]"
           >
             <source src="/img/banner/street.mp4" type="video/mp4" />
           </video>
 
-          <div className="full-absolute bg-black/75 -z-[1]" />
+          <div className="absolute-full bg-black/75 -z-[1]" />
 
           <div className="content flex flex-col text-center">
-            <h2 className="text-7xl mb-2.5 font-extrabold">Localização</h2>
-            <h3 className="text-3xl mb-10">Bairro Rau. Willy Dorow, 141</h3>
-            <p className="text-[12px] max-w-main-6">
+            <h2 className="text-7xl small:text-5xl mb-2.5 font-extrabold">
+              Localização
+            </h2>
+            <h3 className="text-3xl small:text-xl mb-10">
+              Bairro Rau. Willy Dorow, 141
+            </h3>
+            <p className="text-[12px] small:text-[10px] max-w-main-6">
               Caso precise ter um atendimento presencialmente conosco, podemos
               lhe atender aqui em Jaraguá do Sul, SC
             </p>

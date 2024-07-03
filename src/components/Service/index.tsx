@@ -16,7 +16,7 @@ export default function Service({
   return (
     <Link
       href="#"
-      className="flex-1 min-h-[474px] px-10 py-7 relative group overflow-hidden"
+      className="flex-1 min-h-[474px] small:h-[400px] px-10 py-7 relative group overflow-hidden"
     >
       <Image
         src={image}
@@ -25,8 +25,8 @@ export default function Service({
         className="z-[-1] group-hover:scale-105 transition-transform duration-300 object-cover"
       />
 
-      <div className="full-absolute -z-[1] bg-gradient-to-b from-dark/80 via-dark/0 to-dark/0" />
-      <div className="full-absolute -z-[1] bg-gradient-to-t from-dark/80 via-dark/0 to-dark/0" />
+      <div className="absolute-full -z-[1] bg-gradient-to-b from-dark/80 via-dark/0 to-dark/0" />
+      <div className="absolute-full -z-[1] bg-gradient-to-t from-dark/80 via-dark/0 to-dark/0" />
 
       <div className="h-full flex flex-col justify-between">
         <div>

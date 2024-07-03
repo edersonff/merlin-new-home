@@ -9,9 +9,9 @@ import { links } from "../Navbar/links";
 export default function Footer() {
   return (
     <footer className="content-container bg-dark text-white">
-      <div className="mx-auto w-full content p-4 py-6 lg:py-8">
+      <div className="mx-auto w-full content p-4 py-10 lg:py-8">
         <div className="md:flex md:justify-between">
-          <div className="mb-6 md:mb-0">
+          <div className="mb-6 md:mb-0 small:mb-10">
             <Link href="#" className="flex items-center">
               <Image
                 src="/merlin/logo.svg"
@@ -20,14 +20,14 @@ export default function Footer() {
                 className="me-3"
                 alt="FlowBite Logo"
               />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap ">
+              <span className="self-center text-2xl small:text-lg font-semibold whitespace-nowrap ">
                 Merlin
               </span>
             </Link>
           </div>
-          <div className="grid grid-cols-2 gap-14 sm:grid-cols-3">
+          <div className="grid small:-order-1 grid-cols-2 gap-14 sm:grid-cols-3">
             <div>
-              <h2 className="mb-7 text-sm font-semibold text-neutral-200 uppercase ">
+              <h2 className="mb-7 small:mb-4 text-sm small:text-xs font-semibold text-neutral-200 uppercase ">
                 Recursos
               </h2>
               <ul className="text-neutral-300  font-medium">
@@ -35,7 +35,7 @@ export default function Footer() {
                   <Link
                     href="https://flowzapp.com"
                     target="_blank"
-                    className="hover:underline"
+                    className="hover:underline small:text-sm"
                   >
                     Flow Zapp
                   </Link>
@@ -43,12 +43,15 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="mb-7 text-sm font-semibold text-neutral-200 uppercase ">
+              <h2 className="mb-7 small:mb-4 text-sm small:text-xs font-semibold text-neutral-200 uppercase ">
                 Contato
               </h2>
               <ul className="text-neutral-300  font-medium">
                 <li>
-                  <Link href="/contact#forms" className="hover:underline">
+                  <Link
+                    href="/contact#forms"
+                    className="hover:underline small:text-sm"
+                  >
                     Formulário
                   </Link>
                 </li>
@@ -56,30 +59,41 @@ export default function Footer() {
                   <Link
                     href="mailto:merlin@merlin.com"
                     target="_blank"
-                    className="hover:underline"
+                    className="hover:underline small:text-sm"
                   >
                     Email
                   </Link>
                 </li>
                 <li>
-                  <Link href="tel:+5511999999999" className="hover:underline">
+                  <Link
+                    href="tel:+5511999999999"
+                    className="hover:underline small:text-sm"
+                  >
                     Celular
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 className="mb-7 text-sm font-semibold text-neutral-200 uppercase ">
+              <h2 className="mb-7 small:mb-4 text-sm small:text-xs font-semibold text-neutral-200 uppercase ">
                 Nós siga
               </h2>
               <ul className="text-neutral-300  font-medium">
                 <li className="my-5">
-                  <Link href={"#"} target="_blank" className="hover:underline ">
+                  <Link
+                    href={"#"}
+                    target="_blank"
+                    className="hover:underline small:text-sm "
+                  >
                     Instagram
                   </Link>
                 </li>
                 <li>
-                  <Link href={"#"} target="_blank" className="hover:underline">
+                  <Link
+                    href={"#"}
+                    target="_blank"
+                    className="hover:underline small:text-sm"
+                  >
                     Facebook
                   </Link>
                 </li>
@@ -91,7 +105,10 @@ export default function Footer() {
         <div className="sm:flex sm:items-center sm:justify-between">
           <p className="text-xs">
             © {2022}-{new Date().getFullYear()}{" "}
-            <Link href="/" className="text-neutral-200 hover:underline">
+            <Link
+              href="/"
+              className="text-neutral-200 hover:underline small:text-sm"
+            >
               Merlin
             </Link>
             . Todos os direitos reservados.

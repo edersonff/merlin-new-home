@@ -22,7 +22,7 @@ export default function Navbar() {
             />
           </Link>
           <hr className="w-[2px] ml-11 mr-6 h-8 inline-block bg-neutral-800" />
-          <div className="flex">
+          <div className="flex small:hidden">
             {links.map((link) => (
               <Nav key={link.label} {...link} />
             ))}
