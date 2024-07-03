@@ -45,14 +45,14 @@ body {
 
 @layer components {
   .content {
-    @apply max-w-[1140px] mx-auto;
+    @apply max-w-[1140px] mx-auto small:px-8;
   }
 
-  .full-absolute {
+  .absolute-full {
     @apply w-full h-full absolute top-0 left-0;
   }
 
-  .full-fixed {
+  .fixed-full {
     @apply w-full h-full fixed top-0 left-0;
   }
 
