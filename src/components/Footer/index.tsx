@@ -33,6 +33,15 @@ export default function Footer() {
               <ul className="text-neutral-300  font-medium">
                 <li className="mb-5">
                   <Link
+                    href="https://tech.merlin.app.br"
+                    target="_blank"
+                    className="hover:underline small:text-sm"
+                  >
+                    Merlin Tech
+                  </Link>
+                </li>
+                <li className="mb-5">
+                  <Link
                     href="https://flowzapp.com"
                     target="_blank"
                     className="hover:underline small:text-sm"
