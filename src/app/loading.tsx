@@ -7,7 +7,7 @@ import React, { useEffect } from "react";
 export default function Loading({ isComponent }: { isComponent: boolean }) {
   return (
     <motion.div
-      className="fixed-full z-[999] flex-center small:px-6 bg-gradient-to-br from-primary to-violet-500 overflow-hidden"
+      className="fixed-full z-[999] flex-center small:px-6 bg-gradient-to-br from-primary to-purple-200 overflow-hidden"
       animate={{ height: "100vh" }}
       exit={{ height: "0vh" }}
       transition={{
@@ -20,13 +20,13 @@ export default function Loading({ isComponent }: { isComponent: boolean }) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{
-          duration: 1,
+          duration: 0.5,
           delay: 0.5,
           type: "tween",
         }}
         className="mx-auto  rounded-xl drop-shadow-xl relative"
       >
-        <div className="p-3 animate-spin drop-shadow-2xl bg-gradient-to-bl from-purple-400 via-primary to-indigo-600 md:w-48 md:h-48 h-32 w-32 aspect-square rounded-full">
+        <div className="p-3 animate-spin drop-shadow-2xl bg-gradient-to-bl from-purple-200 via-primary/50 to-purple-200 md:w-36 md:h-36 h-28 w-28 aspect-square rounded-full">
           <div className="rounded-full h-full w-full bg-slate-100 dark:bg-zinc-900 background-blur-md"></div>
         </div>
         <div className="absolute-full flex-center">
