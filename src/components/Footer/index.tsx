@@ -57,7 +57,7 @@ export default function Footer() {
                 </li>
                 <li className="my-5">
                   <Link
-                    href="mailto:merlin@merlin.com"
+                    href="mailto:merlin@merlin.app.br"
                     target="_blank"
                     className="hover:underline small:text-sm"
                   >
@@ -66,7 +66,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="tel:+5511999999999"
+                    href="tel:+55479996556538"
                     className="hover:underline small:text-sm"
                   >
                     Celular

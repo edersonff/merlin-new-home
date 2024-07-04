@@ -32,13 +32,13 @@ export default function Navbar() {
           <div className="flex gap-2">
             <Social
               type="facebook"
-              label="+55 11 99999-9999"
-              href="tel:+5511999999999"
+              label="+55 47 99655-6538"
+              href="tel:+55479996556538"
             />
             <Social
               type="instagram"
-              label="merlin@merlin.com.br"
-              href="mailto:merlin@merlin.com.br"
+              label="merlin@merlin.app.br.br"
+              href="mailto:merlin@merlin.app.br.br"
             />
           </div>
           <ButtonOutlined>Contate-nos</ButtonOutlined>

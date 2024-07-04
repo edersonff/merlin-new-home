@@ -7,19 +7,19 @@ export const links = [
   },
   {
     label: "Sobre",
-    url: "/sobre",
+    url: "#sobre",
   },
   {
     label: "Produtos",
-    url: "/produtos",
+    url: "#projetos",
     dropdown: products,
   },
   {
     label: "Serviços",
-    url: "/servicos",
+    url: "#serviços",
   },
   {
     label: "Recursos",
-    url: "/recursos",
+    url: "/#portifolio",
   },
 ];
