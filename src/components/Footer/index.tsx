@@ -58,7 +58,7 @@ export default function Footer() {
               <ul className="text-neutral-300  font-medium">
                 <li>
                   <Link
-                    href="/contact#forms"
+                    href="#mensagem"
                     className="hover:underline small:text-sm"
                   >
                     Formulário

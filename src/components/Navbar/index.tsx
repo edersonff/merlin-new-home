@@ -41,7 +41,9 @@ export default function Navbar() {
               href="mailto:merlin@merlin.app.br.br"
             />
           </div>
-          <ButtonOutlined>Contate-nos</ButtonOutlined>
+          <ButtonOutlined href="#mensagem" target="_blank">
+            Contate-nos
+          </ButtonOutlined>
         </div>
       </div>
     </div>
