@@ -90,6 +90,33 @@ select:-webkit-autofill:focus {
   @apply border-primary font-bold;
 }
 
+/* error input */
+input:focus:required:invalid,
+textarea:focus:required:invalid,
+select:focus:required:invalid {
+  border-color: red;
+  border-width: 2px;
+  animation: error 0.25s ease-in-out;
+}
+
+@keyframes error {
+  0% {
+    transform: translateX(-2px);
+  }
+  25% {
+    transform: translateX(2px);
+  }
+  50% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 ::selection {
   @apply bg-black/80 text-white;
 }
