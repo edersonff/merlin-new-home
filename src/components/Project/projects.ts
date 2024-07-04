@@ -18,7 +18,7 @@ export const projects: Project[] = [
         "/img/mockups/04.webp",
       color: "#05D658",
     scripts: ["tailwind", "typescript", "nextjs", "postgresql", "cloud"],
-    url: "https://zapauto.com.br",
+    url: "https://zapzapauto.com.br",
   },
   {
     title: "Criação do Software <color>Alarc Tools</color>",

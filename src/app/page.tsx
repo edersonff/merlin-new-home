@@ -40,6 +40,7 @@ import dynamic from "next/dynamic";
 import { useIsSmall } from "@/hooks/useMediaQuery";
 import Loading from "./loading";
 import { useState } from "react";
+import Portifolio from "@/sections/portifolio";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
@@ -55,7 +56,7 @@ const about: {
   {
     title: "Visão",
     description:
-      "Acreditamos que a tecnologia está sempre em <b>constate evolução</b>, no qual, muitas vezes, pode ser difícil de acompanhar. O que poderá criar uma <b>barreira e ruído</b> na comunicação entre a software e o usuário.",
+      "Acreditamos que a tecnologia está sempre em <b>constante evolução</b>, no qual, muitas vezes, pode ser difícil de acompanhar. O que poderá criar uma <b>barreira e ruído</b> na comunicação entre o software e o usuário.",
   },
   {
     title: "Valores",
@@ -109,8 +110,14 @@ export default function Home() {
                   usando as ferramentas certas para você e para sua empresa.
                 </p>
                 <div className="flex gap-main small:flex-col">
-                  <Button className="flex-1">Conheça nossos serviços</Button>
-                  <ButtonOutlined className="min-w-main-2">
+                  <Button className="flex-1" href="#serviços" target="_self">
+                    Conheça nossos serviços
+                  </Button>
+                  <ButtonOutlined
+                    className="min-w-main-2"
+                    href="#sobre"
+                    target="_self"
+                  >
                     Sobre
                   </ButtonOutlined>
                 </div>
@@ -121,14 +128,14 @@ export default function Home() {
                 animationData={hero}
                 className="transform scale-x-[-1] max-w-[650px] w-full min-h-[512px]"
                 style={{ width: "100%", height: "100%" }}
-                // onDOMLoaded={() => setLoading(false)}
+                onDOMLoaded={() => setLoading(false)}
               />
             }
           </div>
         </div>
       </div>
       <main>
-        <div className="w-full bg-secondary text-white">
+        <section id="tecnologias" className="w-full bg-secondary text-white">
           <div className="py-[70px] flex small:flex-col gap-main content">
             <h2 className="text-2xl leading-[135%] min-w-main-3 small:text-center">
               <b>Tecnologias</b>
@@ -187,9 +194,9 @@ export default function Home() {
               </SwiperSlide>
             </Swiper>
           </div>
-        </div>
+        </section>
 
-        <div className="w-full py-36">
+        <section className="w-full py-36" id="sobre">
           <div className="content flex gap-[100px] small:x-[flex-col,gap-16]">
             <div className="flex-center py-20">
               <div className="flex-1">
@@ -210,7 +217,9 @@ export default function Home() {
                   de usar, para que qualquer pessoa possa utilizá-los sem
                   dificuldades.
                 </p>
-                <ButtonOutlined>Vamos-lá!</ButtonOutlined>
+                <ButtonOutlined href="#projetos" target="_self">
+                  Vamos-lá!
+                </ButtonOutlined>
               </div>
             </div>
             <div className="big:min-w-[466px] small:h-[50vh] relative">
@@ -227,9 +236,9 @@ export default function Home() {
               />
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="w-full bg-dark-light">
+        <section className="w-full bg-dark-light" id="projetos">
           <div className="relative pt-[120px] pb-[132px]">
             <video
               autoPlay
@@ -269,10 +278,13 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="bg-dark relative -mt-[225px] pt-[400px] pb-[200px] ">
-          <h2 className="hidden">Sobre nós</h2>
+        <section
+          className="bg-dark relative -mt-[225px] pt-[400px] pb-[200px]"
+          id="pilares"
+        >
+          <h2 className="hidden">Nossos pilares</h2>
           <div className="content flex gap-main small:flex-col">
             {about.map((item, index) => (
               <div
@@ -287,154 +299,118 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
-        <h2 className="hidden">Nossos serviços</h2>
+        <section id="serviços">
+          <h2 className="hidden">Nossos serviços</h2>
 
-        <div className="w-full relative">
-          <Image
-            src="/img/services/tools.jpg"
-            alt="Serviço de criação de ferramentas da Merlin"
-            fill
-            className="z-[-1] object-cover"
-          />
-          <div className="content py-32 text-white">
-            <div className="big:w-2/3">
-              <h2 className="text-[64px] small:text-5xl mb-7 leading-[100%] font-light">
-                <b className="font-extrabold block">Soluções e Ferramentas </b>
-                Para projetos
-              </h2>
-              <p className="text-[12px] small:text-[10px] mb-12">
-                Descubra nossos softwares e ferramentas que podem ajudar você e
-                sua empresa a crescer e se desenvolver.
-              </p>
-              <Button>Quero conhecer</Button>
-            </div>
-          </div>
-        </div>
-        <div className="flex small:flex-col">
-          <Service
-            subtitle="Android e iOS"
-            title="Aplicativos para Celulares"
-            image="/img/services/mobile.jpg"
-          >
-            Construa aplicativos incríveis para Android e iOS, com softwares
-            como React Native e Flutter
-          </Service>
-          <Service
-            subtitle="Desenvolvimento Web"
-            title="Plataformas Digitais e Aplicações"
-            image="/img/services/web.jpg"
-          >
-            Softwares construidos para a web, com tecnologias como React,
-            Next.js, Node.js e muito mais
-          </Service>
-          <Service
-            subtitle="Desktop"
-            title="Softwares para Computadores"
-            image="/img/services/desktop.jpg"
-          >
-            Crie softwares para computadores com tecnologias como Electron e
-            React
-          </Service>
-          <Service
-            subtitle="Design e UX/UI"
-            title="Concepção e Design de Projetos"
-            image="/img/services/design.jpg"
-          >
-            Conte com nossos designers para criar interfaces incríveis e
-            intuitivas
-          </Service>
-        </div>
-
-        <div className="py-52 bg-dark">
-          <div className="content">
-            <div className="flex flex-col gap-14 text-white text-center">
-              <div>
-                <Heading align="center" subtitle="Conheça nossos projetos">
-                  <span className="font-light">
-                    Portfólio de <b className="font-extrabold">projetos</b>
-                  </span>
-                </Heading>
-                <div className="flex-center">
-                  <p className="max-w-main-6 text-[12px] small:text-[10px]">
-                    Conheça alguns dos nossos softwares web que foram
-                    divulgados, e veja como podemos ajudar você e sua empresa.
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-col gap-main">
-                <div className="flex gap-main min-h-[367px] small:flex-col">
-                  <Gallery
-                    src="/img/projects/01.jpg"
-                    alt="Projetos da Merlin"
-                  />
-                  <Gallery
-                    src="/img/projects/02.jpg"
-                    alt="Projetos da Merlin"
-                  />
-                  <Gallery
-                    src="/img/projects/03.jpg"
-                    alt="Projetos da Merlin"
-                  />
-                </div>
-                <div className="flex gap-main min-h-[367px] small:flex-col">
-                  <Gallery
-                    src="/img/projects/04.jpg"
-                    alt="Projetos da Merlin"
-                  />
-                  <Gallery
-                    src="/img/projects/05.jpg"
-                    alt="Projetos da Merlin"
-                  />
-                  <Gallery
-                    src="/img/projects/06.jpg"
-                    alt="Projetos da Merlin"
-                  />
-                </div>
+          <div className="w-full relative">
+            <Image
+              src="/img/services/tools.jpg"
+              alt="Serviço de criação de ferramentas da Merlin"
+              fill
+              className="z-[-1] object-cover"
+            />
+            <div className="content py-32 text-white">
+              <div className="big:w-2/3">
+                <h2 className="text-[64px] small:text-5xl mb-7 leading-[100%] font-light">
+                  <b className="font-extrabold block">
+                    Soluções e Ferramentas{" "}
+                  </b>
+                  Para projetos
+                </h2>
+                <p className="text-[12px] small:text-[10px] mb-12">
+                  Descubra nossos softwares e ferramentas que podem ajudar você
+                  e sua empresa a crescer e se desenvolver.
+                </p>
+                <Button href="#mensagem" target="_self">
+                  Entre em contato
+                </Button>
               </div>
             </div>
           </div>
-        </div>
+          <div className="flex small:flex-col">
+            <Service
+              subtitle="Android e iOS"
+              title="Aplicativos para Celulares"
+              image="/img/services/mobile.jpg"
+            >
+              Construa aplicativos incríveis para Android e iOS, com softwares
+              como React Native e Flutter
+            </Service>
+            <Service
+              subtitle="Desenvolvimento Web"
+              title="Plataformas Digitais e Aplicações"
+              image="/img/services/web.jpg"
+            >
+              Softwares construidos para a web, com tecnologias como React,
+              Next.js, Node.js e muito mais
+            </Service>
+            <Service
+              subtitle="Desktop"
+              title="Softwares para Computadores"
+              image="/img/services/desktop.jpg"
+            >
+              Crie softwares para computadores com tecnologias como Electron e
+              React
+            </Service>
+            <Service
+              subtitle="Design e UX/UI"
+              title="Concepção e Design de Projetos"
+              image="/img/services/design.jpg"
+            >
+              Conte com nossos designers para criar interfaces incríveis e
+              intuitivas
+            </Service>
+          </div>
+        </section>
 
-        <div className="w-full bg-gradient-to-r from-primary to-secondary py-[108px]">
+        <section className="py-52 bg-dark">
+          <Portifolio />
+        </section>
+
+        <section
+          className="w-full bg-gradient-to-r from-primary to-secondary py-[108px]"
+          id=""
+        >
+          <h2 className="hidden">Nossos soluções</h2>
           <div className="content flex justify-between items-center gap-10 small:x-[flex-col,gap-16]">
             <div className="flex flex-1 flex-col justify-between">
-              <Heading subtitle="Sobre Nós" white={true}>
+              <Heading subtitle="Nossos soluções" white={true}>
                 <b className="font-extrabold leading-[1]">
-                  Soluções e Ferramentas Para projetos
+                  Melhores soluções para sua empresa
                 </b>
               </Heading>
               <div>
-                <Button className="min-w-main-3 bg-white text-primary-important">
-                  Quero Conhecer
+                <Button
+                  href="#mensagem"
+                  target="_self"
+                  className="min-w-main-3 bg-white text-primary-important"
+                >
+                  Marcar reunião
                 </Button>
               </div>
             </div>
             <div className="text-white flex-1">
               <h3 className="mb-6 font-bold text-[16px]">
-                Laudantium reprehenderit dolore ea reprehenderit reiciendis ut
-                aspernatur. Sint natus mollitia qui.
+                Construa a sua proxima aplicação com a nossa ajuda
               </h3>
               <p className="text-[12px] small:text-[10px]">
-                Et non nobis illum sed a repellat qui porro occaecati. Deserunt
-                ut eos iure. Voluptatem deleniti blanditiis ab. Nesciunt fuga
-                quam voluptatem quisquam nulla. Quasi ea neque. Perspiciatis
-                dolorem iure. Vitae consectetur quaerat exercitationem numquam
-                deserunt est et qui cum. Est voluptas quo voluptatem possimus
-                vero quo est. Molestiae corporis doloribus natus molestiae quam
-                dolores delectus pariatur velit. Consequatur accusamus quo a
-                delectus et.
+                Trabalhamos com as mais modernas tecnologias para os mais
+                diversos setores, entre em contato para descobrir o que podemos
+                fazer por você. Aplicativos móveis, plataformas de gerenciamento
+                web, aplicações desktop, automações de serviços, design, ux e
+                muito mais.
               </p>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="pt-48 pb-52 bg-dark">
+        <section className="pt-48 pb-52 bg-dark" id="avaliações">
           <div className="content">
             <div className="flex flex-col gap-32 text-white">
               <div>
-                <Heading align="center" subtitle="Saiba mais sobre nós">
+                <Heading align="center" subtitle="Descubra o que dizem de nós">
                   <span className="font-light">
                     Testemunhos de <b className="font-extrabold">clientes</b>
                   </span>
@@ -455,44 +431,49 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         <Forms />
 
-        <div className="w-full bg-gradient-to-r to-primary from-secondary py-[108px]">
+        <section
+          className="w-full bg-gradient-to-r to-primary from-secondary py-[108px]"
+          id=""
+        >
           <div className="content flex justify-between items-center gap-10 small:x-[flex-col,gap-16]">
             <div className="flex flex-1 flex-col justify-between">
-              <Heading subtitle="Sobre Nós" white={true}>
+              <Heading subtitle="Nossa equipe" white={true}>
                 <b className="font-extrabold leading-[1]">
-                  Soluções e Ferramentas Para projetos
+                  Gostaria de trabalhar conosco?
                 </b>
               </Heading>
               <div>
-                <Button className="min-w-main-3 bg-white text-primary-important">
-                  Quero Conhecer
+                <Button
+                  href="#mensagem"
+                  target="_self"
+                  className="min-w-main-3 bg-white text-primary-important"
+                >
+                  Vamos trabalhar juntos
                 </Button>
               </div>
             </div>
             <div className="text-white flex-1">
               <h3 className="mb-6 font-bold text-[16px]">
-                Laudantium reprehenderit dolore ea reprehenderit reiciendis ut
-                aspernatur. Sint natus mollitia qui.
+                Mande uma mensagem para nós
               </h3>
               <p className="text-[12px] small:text-[10px]">
-                Et non nobis illum sed a repellat qui porro occaecati. Deserunt
-                ut eos iure. Voluptatem deleniti blanditiis ab. Nesciunt fuga
-                quam voluptatem quisquam nulla. Quasi ea neque. Perspiciatis
-                dolorem iure. Vitae consectetur quaerat exercitationem numquam
-                deserunt est et qui cum. Est voluptas quo voluptatem possimus
-                vero quo est. Molestiae corporis doloribus natus molestiae quam
-                dolores delectus pariatur velit. Consequatur accusamus quo a
-                delectus et.
+                Está interessado em trabalhar conosco na Merlin? Entre em
+                contato preenchendo o formulário e entraremos em contato para
+                marcar uma entrevista. Caso queira nos conhecer melhor, fique a
+                vontade para nos seguir em nossas redes que mantemos atualizado
+                com novidades da área de tecnologia, assim como nossos pilares e
+                missões para esse mercado.
               </p>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="py-40 bg-dark text-center">
+        <section className="py-40 bg-dark text-center" id="contato">
+          <h2 className="hidden">Nossos contatos</h2>
           <div className="content flex gap-main small:x-[flex-col,gap-16]">
             <div className="flex-1">
               <Contact
@@ -501,10 +482,10 @@ export default function Home() {
                 Icon={MdEmail}
               >
                 <Link
-                  href="mailto:hello@merlin.com"
+                  href="mailto:contato@merlin.app.br"
                   className="small:text-xs font-bold text-primary hover:underline underline-offset-4"
                 >
-                  hello@merlin.com
+                  contato@merlin.app.br
                 </Link>
               </Contact>
             </div>
@@ -516,10 +497,10 @@ export default function Home() {
                 Icon={MdPhone}
               >
                 <Link
-                  href="tel:+5511999999999"
+                  href="tel:+55479996556538"
                   className="small:text-xs font-bold text-primary hover:underline underline-offset-4"
                 >
-                  +55 11 99999-9999
+                  +55 47 99655-6538
                 </Link>
               </Contact>
             </div>
@@ -536,9 +517,9 @@ export default function Home() {
               </Contact>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="py-48 relative flex-center text-white">
+        <section className="py-48 relative flex-center text-white" id="local">
           <video
             autoPlay
             loop
@@ -563,7 +544,7 @@ export default function Home() {
               lhe atender aqui em Jaraguá do Sul, SC
             </p>
           </div>
-        </div>
+        </section>
       </main>
 
       <Footer />
