@@ -1,10 +1,18 @@
-import React, { ButtonHTMLAttributes, useMemo, useState } from "react";
+import React, {
+  AnchorHTMLAttributes,
+  DetailedHTMLProps,
+  PropsWithChildren,
+  useMemo,
+  useState,
+} from "react";
 
 export default function Button({
   children,
   className,
   ...props
-}: React.ButtonHTMLAttributes<HTMLButtonElement>) {
+}: PropsWithChildren<
+  DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>
+>) {
   const [isHovered, setIsHovered] = useState(false);
 
   const hoverClass = useMemo(() => {
@@ -15,14 +23,15 @@ export default function Button({
   }, [isHovered]);
 
   return (
-    <button
+    <a
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`${className} ${hoverClass} bg-primary text-sm text-white unselectable font-extrabold rounded-full py-[10px] px-8 transition-all duration-200`}
+      role="button"
+      className={`${className} ${hoverClass} bg-primary text-center text-sm small:text-xs text-white unselectable font-extrabold rounded-full py-[10px] px-8 transition-all duration-200`}
       {...props}
     >
       {children}
-    </button>
+    </a>
   );
 }
 
@@ -30,7 +39,9 @@ export function ButtonOutlined({
   children,
   className,
   ...props
-}: ButtonHTMLAttributes<HTMLButtonElement>) {
+}: PropsWithChildren<
+  DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>
+>) {
   const [isHovered, setIsHovered] = useState(false);
 
   const hoverClass = useMemo(() => {
@@ -41,13 +52,14 @@ export function ButtonOutlined({
   }, [isHovered]);
 
   return (
-    <button
+    <a
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`${className} ${hoverClass} bg-primary/0 text-sm unselectable text-primary border font-extrabold border-primary rounded-full py-[10px] px-8 transition-all duration-200 hover:x-[bg-primary/100,text-white]`}
+      role="button"
+      className={`${className} ${hoverClass} bg-primary/0 text-center text-sm small:x-[text-xs,px-4] unselectable text-primary border font-extrabold border-primary rounded-full py-[10px] px-8 transition-all duration-200 hover:x-[bg-primary/100,text-white]`}
       {...props}
     >
       {children}
-    </button>
+    </a>
   );
 }
