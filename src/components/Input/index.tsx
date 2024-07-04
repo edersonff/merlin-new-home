@@ -15,7 +15,7 @@ export default function Input({
         required={required}
         className={
           className +
-          " border-2 border-neutral-700 bg-dark text-neutral-300 py-3 px-4 rounded-md w-full"
+          " border-2 border-neutral-800 bg-dark text-neutral-300 py-3 px-4 rounded-md w-full"
         }
         {...props}
       />
@@ -37,7 +37,7 @@ export function InputTextarea({
         required={required}
         className={
           className +
-          " border-2 border-neutral-700 bg-dark text-neutral-300 py-3 px-4 rounded-md w-full resize-none min-h-40"
+          " border-2 border-neutral-800 bg-dark text-neutral-300 py-3 px-4 rounded-md w-full resize-none min-h-40"
         }
         {...props}
       />
