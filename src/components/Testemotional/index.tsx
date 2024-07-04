@@ -31,7 +31,7 @@ export default function Testemotional({
         height={50}
         className="absolute bottom-0 right-0 transform rotate-180 translate-x-1/2 translate-y-1/2 z-10"
       />
-      <div className="absolute left-2 bottom-0 flex gap-2 py-3 px-5 text-xl transform translate-y-1/2 rounded-full bg-dark-light border-[10px] border-dark">
+      <div className="absolute left-2 bottom-0 flex gap-2 py-3 px-5 small:x-[px-3,py-2,text-sm,border-[7px]] text-xl transform translate-y-1/2 rounded-full bg-dark-light border-[10px] border-dark">
         {[...Array(5)].map((_, index) => (
           <FaStar key={index} />
         ))}
