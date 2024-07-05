@@ -7,20 +7,16 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    template:
-      "%s - Desenvolvimento de Software e Consultoria em TI em Jaraguá do Sul",
-    default:
-      "Merlin Tecnologia - Desenvolvimento de Software e Consultoria em TI em Jaraguá do Sul",
+    template: "%s - Eficiência e Simplicidade",
+    default: "Merlin - Eficiência e Simplicidade",
   },
   description:
-    "A Merlin oferece soluções de software personalizadas para empresas. Nossa equipe especializada desenvolve ferramentas adaptadas às necessidades específicas de cada negócio. Contate-nos para descobrir como podemos ajudar a impulsionar o seu sucesso.",
+    "Com simplicidade e eficiência criamos softwares modernos e diretos ao ponto, para melhor atender a sua empresa . Entre em contato para descobrir o como podemos lhe ajudar.",
   alternates: {
     canonical: process.env.NEXT_PUBLIC_BASE_URL,
     languages: {
       pt: "/",
-      en: "/en",
       "pt-BR": "/",
-      "en-US": "/en",
     },
   },
 
@@ -28,13 +24,11 @@ export const metadata: Metadata = {
     type: "website",
     url: process.env.NEXT_PUBLIC_BASE_URL,
     title: {
-      template:
-        "%s - Desenvolvimento de Software e Consultoria em TI em Jaraguá do Sul",
-      default:
-        "Merlin Tecnologia - Desenvolvimento de Software e Consultoria em TI em Jaraguá do Sul",
+      template: "%s - Eficiência e Simplicidade",
+      default: "Merlin - Eficiência e Simplicidade",
     },
     description:
-      "A Merlin oferece soluções de software personalizadas para empresas. Nossa equipe especializada desenvolve ferramentas adaptadas às necessidades específicas de cada negócio. Contate-nos para descobrir como podemos ajudar a impulsionar o seu sucesso.",
+      "Com simplicidade e eficiência criamos softwares modernos e diretos ao ponto, para melhor atender a sua empresa . Entre em contato para descobrir o como podemos lhe ajudar.",
     images: [
       {
         url: "/og/image.jpg",
@@ -45,25 +39,32 @@ export const metadata: Metadata = {
     ],
   },
 
-  applicationName: "Merlin Tecnologia",
+  applicationName: "Merlin",
   themeColor: "#6938D9",
   referrer: "origin-when-cross-origin",
-  creator: "Merlin Tecnologia",
+  creator: "Merlin",
   keywords: [
-    "Desenvolvimento de Software",
-    "Consultoria em TI",
-    "Soluções de Software",
-    "Software Personalizado",
-    "Desenvolvimento de Aplicativos",
-    "Desenvolvimento Web",
-    "Desenvolvimento Mobile",
-    "Consultoria em Tecnologia",
-    "Empresa de Tecnologia",
-    "Empresa de Software",
-    "Jaraguá do Sul",
-    "Santa Catarina",
-    "Brasil",
-    "Merlin Tecnologia",
+    "merlin",
+    "aplicativos",
+    "software",
+    "plataforma",
+    "web",
+    "mobile",
+    "desenvolvimento",
+    "tecnologia",
+    "react",
+    "next",
+    "node",
+    "typescript",
+    "javascript",
+    "api",
+    "graphql",
+    "rest",
+    "fullstack",
+    "frontend",
+    "backend",
+    "design",
+    "ux",
   ],
   robots: {
     index: true,

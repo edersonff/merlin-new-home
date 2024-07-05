@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
 
   const messageHTMl = `
 <div style="font-family: Arial, sans-serif; font-size: 16px;">
-    <h1 style="color: #333; font-size: 24px; font-weight: 700; margin-bottom: 20px;">Contato da home-page <b style="color: #6938D9;">Merlin.app.br</b></h1>
+    <h1 style="color: #333; font-size: 24px; font-weight: 700; margin-bottom: 20px;">Contato da home-page <b style="color: #6938D9;">merlin.app.br</b></h1>
     <table style="width: 100%; margin-bottom: 20px;">
         <tr>
             <td style="width: 100px; font-weight: 700;">Nome:</td>
